@@ -1,4 +1,4 @@
-import { ApiConnector } from "../../helpers/connector.ts";
+import {ApiConnector} from "../../helpers/connector.ts";
 import {ICoreService} from "./interface.ts";
 import {IConnector} from "../../models/delivery/common/IConnector.ts";
 import {IProductsActions} from "./ProductsActions/interface.ts";

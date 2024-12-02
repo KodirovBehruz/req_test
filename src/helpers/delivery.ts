@@ -44,12 +44,13 @@ export const apiRequestWrapper = async <T>(
     } catch (error_) {
         const error = error_ as CustomError
         const detailsMessage =
-            (!isAxiosError(error.response)
+            error.response && !isAxiosError(error.response)
                 ? error.response?.data?.error?.code
-                : error.response.response?.data?.error?.code) ?? null
-        const errorMessage = !isAxiosError(error.response)
-            ? error.response.data?.error?.code
-            : error.response.response?.data?.error?.code ?? null
+                : null
+        const errorMessage =
+            error.response && !isAxiosError(error.response)
+                ? error.response?.data?.error?.code
+                : null
         result.error =
             errorMessage ||
             detailsMessage ||

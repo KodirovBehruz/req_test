@@ -1,4 +1,4 @@
-import { CoreService } from "../delivery/CoreService/index.ts"
+import { CoreService } from "./CoreService"
 import {IDelivery} from "./interface.ts";
 import {ICoreService} from "./CoreService/interface.ts";
 

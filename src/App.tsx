@@ -1,15 +1,19 @@
 /* new 3 */
 
 import './App.css'
-import {Products} from "./pages/Products";
 import {DeliveryProvider} from "./hooks/API/useDelivery.tsx";
+import {AppRouter} from "./router/AppRouter.tsx";
+import {MessagesProvider} from "./hooks/useMessages.tsx";
 
-function App() {
+export const App = () => {
   return (
-  <DeliveryProvider>
-      <Products />
-  </DeliveryProvider>
+    <div id='root'>
+      <DeliveryProvider>
+        <MessagesProvider>
+          <AppRouter />
+        </MessagesProvider>
+      </DeliveryProvider>
+    </div>
   )
 }
 
-export default App
